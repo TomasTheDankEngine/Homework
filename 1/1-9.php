@@ -17,5 +17,5 @@ if ($trecias < 10 || $trecias > 90) {
     $trecias = 0;
     $count--;
 };
-echo "Pirmas: $pirmas <br> Antras: $antras <br> Trečias: $trecias <br>";
+// echo "Pirmas: $pirmas <br> Antras: $antras <br> Trečias: $trecias <br>";
 echo 'Antros sąlygos vidurkis yra ' . round(($pirmas + $antras + $trecias) / $count) . '.';
