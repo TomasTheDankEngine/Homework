@@ -1,5 +1,5 @@
 <?php
-$name = 'Leonardo';
+$name = 'Leonard';
 $surname = 'DaVincio';
 if (strlen($name) > strlen($surname)) {
     echo $surname;
