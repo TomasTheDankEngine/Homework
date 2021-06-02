@@ -17,7 +17,7 @@ for ($i = 0; $i < 21; $i++) {
         else if ($i - $j == 10 || ($i + $j) / 3 == 10 && $i != 0) {
             echo "<span style=\"color: $color\">*</span>";
         }
-        else {echo "<span style=\"opacity: 0\">_</span>";}
+        else {echo "<span style=\"opacity: 0\">*</span>";}
     }
     echo '<br>';
 }
