@@ -13,5 +13,5 @@ echo $nums_str;
 $nums = [];
 for ($i = 0; $i < 30; $i++) {
     array_push($nums, rand(5, 25));
-    echo $nums[$i] . ' ';
 }
+print_r($nums);

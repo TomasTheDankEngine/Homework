@@ -6,7 +6,7 @@ while (count($rand1) <= 50) {
 }
 $rand1_str = implode(" ", $rand1);
 
-$dups = array();
+$dups = [];
 foreach(array_count_values($rand1) as $val => $c)
     if($c > 1) $dups[] = $val;
 $dups_str = implode(' ', $dups);

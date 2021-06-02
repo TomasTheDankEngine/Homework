@@ -40,8 +40,8 @@ echo "Sum of even numbers within array: $sum";
 <?php
 $newnums = [];
 echo 'Array: <br>';
-for ($i = 0; $i < 30; $i++) {
-    echo $nums[$i] . ' ';
+foreach ($nums as $num) {
+    echo $num . ' ';
 }
 echo '<br> New array: <br>';
 for ($i = 0; $i < count($nums); $i++) {
