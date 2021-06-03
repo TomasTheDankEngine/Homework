@@ -21,19 +21,29 @@ echo "Amount of nums greater than 10: $count";
 <h2>*** 4-b:</h2>
 <?php
 $largest = 0;
-foreach ($nums as $num) {
-    !($num > $largest) ?: $largest = $num;
+$indexes = [];
+foreach ($nums as $key => $num) {
+    if ($num > $largest) {
+        $largest = $num;
+        $indexes = [];
+    }
+    if ($num == $largest) {
+        $indexes[] = $key;
+    }
 }
-echo "Largest num: $largest";
+echo "Largest num: $largest at index(es): ";
+foreach ($indexes as $a) {
+    echo $a . ' ';
+}
 ?>
 <!-- ************************************ -->
 <h2>*** 4-c:</h2>
 <?php
 $sum = 0;
-foreach ($nums as $num) {
-    !($num % 2 == 0) ?: $sum += $num;
+foreach ($nums as $key => $num) {
+    !($key % 2 === 0) ?: $sum += $num;
 }
-echo "Sum of even numbers within array: $sum";
+echo "Sum of even index numbers within array: $sum";
 ?>
 <!-- ************************************ -->
 <h2>*** 4-d:</h2>
