@@ -1,16 +1,12 @@
-<h2>*** 6-5:</h2>
+<h2>*** 6-6:</h2>
 <?php
 $numbers = [];
 foreach (range(1, 100) as $_) {
-    $numbers[] = rand(33, 77);
+    $numbers[] = rand(333, 777);
 }
 print_r($numbers);
-usort($numbers, function($a, $b){
-    return countnums($a) <=> countnums($b);
-});
 echo '<br><br>';
-print_r($numbers);
-function countnums($num)
+function isprime($num)
 {
     $counter = 0;
     $divisor = 2;
@@ -22,6 +18,12 @@ function countnums($num)
             $counter++;
         }
         $divisor++;
+        if ($divisor == $num && $counter === 0 && $num % 2 != 0) {
+            return $num;
+        }
     }
-    return "Count is: $counter.";
+}
+echo '<br><br>Primes: ';
+foreach ($numbers as $num) {
+    echo isprime($num) . ' ';
 }
