@@ -1,4 +1,4 @@
-<h2>*** 5-5:</h2>
+<h2>*** 5-6:</h2>
 <?php
 $mas = array_fill(0, 30, '');
 $indexes = [];
@@ -9,6 +9,13 @@ while (count($indexes) < 30) {
 foreach ($indexes as $key => $value) {
     $mas[$key] = ['user_id' => $indexes[$key], 'place_in_row' => rand(0, 100)];
 }
-print_r($indexes);
+
+foreach ($mas as $val) {
+    usort($val, function($a, $b) {
+        return $a <=> $b;
+    });
+}
+print_r($mas);
 echo '<br><br>';
+arsort($mas);
 print_r($mas);
