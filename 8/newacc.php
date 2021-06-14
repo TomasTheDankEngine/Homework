@@ -20,18 +20,29 @@
     <!-- nav end -->
     <!-- New account creation -->
     <h2>Create new account</h2>
-    <form action="submit">
-        <div>
+    <form action="submit" name="newAcc" method="POST">
+        <div class="inputs">
             <span>Name</span>
+            <input type="text" name="name[]"><br>
             <span>Surname</span>
+            <input type="text" name="surname[]"><br>
             <span>Account number</span>
+            <input type="text" name="accNo[]"><br>
             <span>Personal ID number</span>
+            <input type="text" name="pId[]"><br>
         </div>
         <div>
-        <button>Create account</button>
+            <button>Create account</button>
         </div>
     </form>
     <!-- New account creation end -->
 </body>
 
 </html>
+
+<?php
+// $accountsList = [];
+$name = $_POST['name[]'];
+$surname = $_POST['surname'];
+$accNo = $_POST['accNo'];
+$pId = $_POST['pId'];

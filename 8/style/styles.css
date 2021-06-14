@@ -19,3 +19,12 @@ body {
 .anav:visited {
     color: black;
 }
+
+.inputs > input {
+    padding: 5px;
+    margin: 5px;
+}
+.inputs > span {
+    padding: 5px;
+    margin: 5px;
+}

@@ -21,6 +21,10 @@
     <!-- Accounts list start -->
     <h2>Accounts list</h2>
     <div>
+        <span>Open accounts are:</span><br>
+        <? foreach ($name as $n) {
+            echo "Name: $n  ";
+        } ?>
 
     </div>
     <!-- Accounts list end -->
