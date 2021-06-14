@@ -18,11 +18,12 @@
         <a href="./withdraw.php" class="anav">Withdraw funds</a>
     </nav>
     <!-- nav end -->
-    <!-- Accounts list -->
+    <!-- Accounts list start -->
     <h2>Accounts list</h2>
     <div>
 
     </div>
+    <!-- Accounts list end -->
 </body>
 
 </html>

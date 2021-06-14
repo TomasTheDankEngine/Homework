@@ -16,6 +16,8 @@
         <a href="./withdraw.php" class="anav">Withdraw funds</a>
     </nav>
     <!-- nav end -->
+    <!-- Deposit start -->
     <h2>Deposit to account</h2>
+    <!-- Deposit end -->
 </body>
 </html>

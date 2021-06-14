@@ -31,6 +31,7 @@
         <button>Create account</button>
         </div>
     </form>
+    <!-- New account creation end -->
 </body>
 
 </html>
