@@ -1,0 +1,21 @@
+body {
+        display: inline-block;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.anav {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    float: right;
+}
+
+.anav:hover {
+    color: darkblue;
+    opacity: 0.6;
+    transition: 1.5s;
+}
+
+.anav:visited {
+    color: black;
+}
