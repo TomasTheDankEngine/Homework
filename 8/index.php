@@ -1,33 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
+function redirectto($page)
+{
+    header("Location: http://localhost/1-php/Homework/8/$page");
+    die;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style/styles.css">
-</head>
 
-<body>
-    <!-- Header start -->
-    <header>
-        <a href="./index.php">
-            <img src="./img/bank-logo.png" alt="logo" class="logo-pic">
-        </a>
-        <nav class="menu-nav">
-            <a href="./newacc.php" class="anav">New account</a>
-            <a href="./accounts.php" class="anav">Accounts overview</a>
-            <a href="./deposit.php" class="anav">Deposit funds</a>
-            <a href="./withdraw.php" class="anav">Withdraw funds</a>
-        </nav>
-    </header>
-    <!-- Header end -->
-    <!-- main start -->
-    <h2>Welcome to the bank.</h2>
-    <div>
-        <span>What would you like to do?</span>
-    </div>
-    <!-- main end -->
-</body>
-</html>
+if (!file_exists(__DIR__.'/accs.json')) {
+    file_put_contents(__DIR__.'/accs.json', json_encode([]));
+}
+$accs = json_decode( file_get_contents(__DIR__.'/accs.json'), 1);
+
+// 1. saraso atvaizdavimas GET
+if (!isset($_GET['action']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
+    require __DIR__. '/home.php';
+}
+
+// 2. Pridejimo atvaizdavimas GET
+elseif ($_GET['action'] == 'add' && $_SERVER['REQUEST_METHOD'] == 'GET') {
+    require __DIR__. '/newacc.php';
+}
+
+// 3. Pridejimo vykdymas POST
+elseif ($_GET['action'] == 'add' && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    require __DIR__. '/doAdd.php';
+}
+
+// 4. Isemimo atvaizdavimas GET
+elseif ($_GET['action'] == 'rem' && $_SERVER['REQUEST_METHOD'] == 'GET') {
+    require __DIR__. '/rem.php';
+}
+
+// 5. Isemimo vykdymas POST
+elseif ($_GET['action'] == 'rem' && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    require __DIR__. '/doRem.php';
+}
+
+// 6. Naujo acc pridejimo atvaizdavimas GET
+elseif ($_GET['action'] == 'add-acc' && $_SERVER['REQUEST_METHOD'] == 'GET') {
+    require __DIR__. '/addAcc.php';
+}
+
+// 7. Naujo acc pridejimo vykdymas POST
+elseif ($_GET['action'] == 'add-acc' && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    require __DIR__. '/doAddAcc.php';
+}
+
+// 8. acc trynimo vykdymas POST
+elseif ($_GET['action'] == 'delete' && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    require __DIR__. '/doDelete.php';
+}

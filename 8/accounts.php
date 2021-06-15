@@ -20,13 +20,15 @@
     <!-- nav end -->
     <!-- Accounts list start -->
     <h2>Accounts list</h2>
-    <div>
-        <span>Open accounts are:</span><br>
-        <? foreach ($name as $n) {
-            echo "Name: $n  ";
-        } ?>
-
-    </div>
+    <ul>
+        <?php foreach ($accs as $acc) : ?>
+            <li>
+                Account No. <?= $acc['accNo'] ?> Balance: <?= $acc['amount'] ?> Account holder: <?= $acc['name'] . ' ' . $acc['surname'] ?>
+                <form action="?action=delete&accNo=<?= $acc['accNo'] ?>" method="post">
+                    <button type="submit">Delete account</button>
+            </li>
+        <?php endforeach ?>
+    </ul>
     <!-- Accounts list end -->
 </body>
 
