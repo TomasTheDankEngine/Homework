@@ -21,6 +21,9 @@
     <!-- Accounts list start -->
     <h2>Accounts list</h2>
     <ul>
+        <?php if ($accs == null) {
+            echo '<br><span>No accounts created!</span><br>';
+        } ?>
         <?php foreach ($accs as $acc) : ?>
             <li>
                 Account No. <?= $acc['accNo'] ?> Balance: <?= $acc['amount'] ?> Account holder: <?= $acc['name'] . ' ' . $acc['surname'] ?>

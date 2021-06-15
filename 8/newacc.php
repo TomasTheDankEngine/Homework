@@ -20,8 +20,8 @@
     <!-- nav end -->
     <!-- New account creation -->
     <h2>Create new account</h2>
-    <?php $id = $_GET['accNo'] ?? 0 ?>
-    <form action="?action=add-acc&accNo=<?= $id ?>" method="post">
+    
+    <form action="?action=add-acc" method="post">
         <div class="inputs">
             <span>Name</span>
             <input type="text" name="name"><br>

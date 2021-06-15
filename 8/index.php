@@ -14,7 +14,7 @@ $accs = json_decode( file_get_contents(__DIR__.'/accs.json'), 1);
 
 // 1. saraso atvaizdavimas GET
 if (!isset($_GET['action']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
-    require __DIR__. '/home.php';
+    require __DIR__. '/accounts.php';
 }
 
 // 2. Pridejimo atvaizdavimas GET

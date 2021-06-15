@@ -18,6 +18,11 @@
     <!-- nav end -->
     <!-- Withdraw start -->
     <h2>Withdraw from account</h2>
+    <?php $id = $_GET['accNo'] ?? 0 ?>
+    <form action="?action=rem&accNo=<?= $id ?>" method="post">
+        <input type="text" name="amount">
+        <button>Withdraw</button>
+    </form>
     <!-- Withdraw end -->
 </body>
 </html>
