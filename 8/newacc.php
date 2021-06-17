@@ -12,15 +12,13 @@
 <body>
     <!-- nav start -->
     <nav class="menu-nav">
-        <a href="./accounts.php" class="anav">Accounts overview</a>
-        <a href="./deposit.php" class="anav">Deposit funds</a>
-        <a href="./withdraw.php" class="anav">Withdraw funds</a>
+        <?php include __DIR__ . '/menu.php' ?>
     </nav>
     <!-- nav end -->
     <!-- New account creation -->
     <h2>Create new account</h2>
-    
-    <form action="?action=add-acc" method="post">
+
+    <form action="http://localhost/1-php/Homework/8/?action=addacc" method="post">
         <div class="inputs">
             <span>Name</span>
             <input type="text" name="name"><br>
@@ -30,9 +28,10 @@
             <input type="text" name="pId"><br>
         </div>
         <div>
-            <button>Create account</button>
+            <button type="submit">Create account</button>
         </div>
     </form>
     <!-- New account creation end -->
 </body>
+
 </html>

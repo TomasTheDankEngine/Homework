@@ -12,18 +12,16 @@
 <body>
     <!-- nav start -->
     <nav class="menu-nav">
-        <a href="./newacc.php" class="anav">New account</a>
-        <a href="./deposit.php" class="anav">Deposit funds</a>
-        <a href="./withdraw.php" class="anav">Withdraw funds</a>
+    <?php include __DIR__ . '/menu.php' ?>
     </nav>
     <!-- nav end -->
     <!-- Accounts list start -->
     <h2>Accounts list</h2>
     <ul>
-        <?php if ($accs == null) {
-            echo '<br><span>No accounts created!</span><br>';
+    <?php if ($accs == null) {
+            echo '<h3>No accounts created!</h3>';
         } ?>
-        <?php foreach ($accs as $acc) : ?>
+        <?php if ($accs != null)  foreach ($accs as $acc) : ?>
             <li>
                 Account No. <?= $acc['accNo'] ?> Balance: <?= $acc['amount'] ?> Account holder: <?= $acc['name'] . ' ' . $acc['surname'] ?>
                 <form action="?action=delete&accNo=<?= $acc['accNo'] ?>" method="post">

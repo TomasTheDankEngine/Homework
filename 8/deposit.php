@@ -10,10 +10,7 @@
 <body>
     <!-- nav start -->
     <nav class="menu-nav">
-        <a href="./index.php" class="anav">Home</a>
-        <a href="./newacc.php" class="anav">New account</a>
-        <a href="./accounts.php" class="anav">Accounts overview</a>
-        <a href="./withdraw.php" class="anav">Withdraw funds</a>
+    <?php include __DIR__ . '/menu.php' ?>
     </nav>
     <!-- nav end -->
     <!-- Deposit start -->
