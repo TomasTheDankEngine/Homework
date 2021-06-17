@@ -10,7 +10,6 @@
 <body>
     <!-- nav start -->
     <nav class="menu-nav">
-        <a href="./index.php" class="anav">Home</a>
         <a href="./newacc.php" class="anav">New account</a>
         <a href="./accounts.php" class="anav">Accounts overview</a>
         <a href="./deposit.php" class="anav">Deposit funds</a>

@@ -6,6 +6,17 @@ function redirectto($page)
     die;
 }
 
+function newAccNo($accs)
+{
+    $accno = 'LT01';
+    $accno .= rand(1000000000000000, 9999999999999999);
+    foreach ($accs as $acc) {
+        if ($accno == $acc) {
+            return newAccNo($accs);
+        }
+        return $accno;
+    }
+}
 
 if (!file_exists(__DIR__.'/accs.json')) {
     file_put_contents(__DIR__.'/accs.json', json_encode([]));
