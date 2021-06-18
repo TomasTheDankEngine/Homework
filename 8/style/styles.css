@@ -1,7 +1,18 @@
 body {
         display: inline-block;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        width: 100%;
 }
+
+.btnl {
+    text-decoration: none;
+    color: black;
+}
+
+.btnl:visited {
+    color: black;
+}
+
 .anav {
     text-decoration: none;
     color: black;
@@ -9,6 +20,7 @@ body {
     margin: 5px;
     float: right;
 }
+
 
 .anav:hover {
     color: darkblue;

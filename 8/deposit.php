@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <title>Deposit</title>
     <link rel="stylesheet" href="./style/styles.css">
 </head>
-
 <body>
     <!-- nav start -->
     <nav class="menu-nav">
@@ -17,23 +15,12 @@
     <!-- nav end -->
     <!-- Deposit start -->
     <h2>Deposit to account</h2>
-    <ul>
-        <?php if ($accs == null) {
-            echo '<h3>No accounts created!</h3>';
-        } ?>
-        <?php if ($accs != null)  foreach ($accs as $acc) : ?>
-            <li>
-                Account No. <?= $acc['accNo'] ?> Balance: <?= $acc['amount'] ?> Account holder: <?= $acc['name'] . ' ' . $acc['surname'] ?>
-                <form action="?action=add&accNo=<?= $id ?>" method="post">
-                    <input type="text" name="amount">
-                    <button>Deposit</button>
-                </form>
-            </li>
-        <?php endforeach ?>
-    </ul>
-
-
-
+    <?php $id = $_GET['accNo'] ?? 0 ?>
+    <?php echo "To account No.: $id<br><br>"?>
+    <form action="?action=add&accNo=<?=$id?>" method="post">
+        <input type="text" name="amount">
+        <button>Deposit to account</button>
+    </form>
     <!-- Deposit end -->
 </body>
 

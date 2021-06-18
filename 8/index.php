@@ -6,6 +6,16 @@ function redirectto(string $page)
     die;
 }
 
+function redirecttoAction ($action, $id = 0) {
+    if ($id) {
+        header('Location: http://localhost/1-php/Homework/8/?action='.$action.'&id='.$id);
+    }
+    else {
+        header('Location: http://localhost/1-php/Homework/8/?action='.$action);
+    }
+    die;
+}
+
 function newAccNo($accs)
 {
     if ($accs == null) {
@@ -23,6 +33,20 @@ function newAccNo($accs)
     }
 }
 
+function getMsg () {
+    if (!isset($_SESSION['msg'])) {
+        return false;
+    }
+    $msg = $_SESSION['msg'];
+    unset($_SESSION['msg']);
+    return $msg;
+}
+
+function setMsg(string $msg)
+{
+    $_SESSION['msg'] = $msg;
+}
+
 if (!file_exists(__DIR__ . '/accs.json')) {
     file_put_contents(__DIR__ . '/accs.json', json_encode([]));
 }
@@ -36,20 +60,17 @@ if (!isset($_GET['action']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
     require __DIR__ . '/accounts.php';
 }
 //---------------------------------------------------------------------------
-//---------------------------------------------------------------------------
- elseif ($_GET['action'] == 'deposit' && $_SERVER['REQUEST_METHOD'] == 'GET') {
+
+ elseif ($_GET['action'] == 'add' && $_SERVER['REQUEST_METHOD'] == 'GET') {
     require __DIR__ . '/deposit.php';
 }
 //---------------------------------------------------------------------------
  elseif ($_GET['action'] == 'add' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     require __DIR__ . '/doAdd.php';
 }
+
 //---------------------------------------------------------------------------
  elseif ($_GET['action'] == 'rem' && $_SERVER['REQUEST_METHOD'] == 'GET') {
-    require __DIR__ . '/rem.php';
-}
-//---------------------------------------------------------------------------
- elseif ($_GET['action'] == 'withdraw' && $_SERVER['REQUEST_METHOD'] == 'GET') {
     require __DIR__ . '/withdraw.php';
 }
 //---------------------------------------------------------------------------
