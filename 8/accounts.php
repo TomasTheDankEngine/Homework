@@ -13,6 +13,7 @@
     <!-- nav start -->
     <nav class="menu-nav">
         <?php include __DIR__ . '/menu.php' ?>
+        <?php include __DIR__ . '/msg.php' ?>
     </nav>
     <!-- nav end -->
     <!-- Accounts list start -->

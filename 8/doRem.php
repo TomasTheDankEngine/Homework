@@ -8,6 +8,7 @@ foreach ($accs as &$acc) {
         }
         $acc['amount'] -= (int) $_POST['amount'];
         file_put_contents(__DIR__.'/accs.json', json_encode($accs));
+        setMsg($_POST['amount'].' EUR withdrawn.');
         redirectto('?action=accounts');
     }
 }

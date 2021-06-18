@@ -11,7 +11,7 @@ function redirecttoAction ($action, $id = 0) {
         header('Location: http://localhost/1-php/Homework/8/?action='.$action.'&id='.$id);
     }
     else {
-        header('Location: http://localhost/1-php/Homework/8/?action='.$action);
+        header('Location: http://localhost/1-php/Homework/8/?action=accounts');
     }
     die;
 }
