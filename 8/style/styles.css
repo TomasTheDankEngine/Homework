@@ -6,11 +6,11 @@ body {
 
 .btnl {
     text-decoration: none;
-    color: black;
+    color: #777877;
 }
 
 .btnl:visited {
-    color: black;
+    color: #777877;
 }
 
 .anav {

@@ -8,10 +8,11 @@ function redirectto(string $page)
 
 function redirecttoAction ($action, $id = 0) {
     if ($id) {
-        header('Location: http://localhost/1-php/Homework/8/?action='.$action.'&id='.$id);
+        // header('Location: http://localhost/1-php/Homework/8/?action='.$action.'&id='.$id);
+        header("Location: http://localhost/1-php/Homework/8/?action=$action&id=$id");
     }
     else {
-        header('Location: http://localhost/1-php/Homework/8/?action=accounts');
+        header("Location: http://localhost/1-php/Homework/8/?action=$action");
     }
     die;
 }
