@@ -19,18 +19,22 @@
     <!-- Accounts list start -->
     <h2>Accounts list</h2>
     <ul>
-        <?php if ($accs == null) {
+        <?php
+        usort($accs, function ($a, $b) {
+            return $a['surname'] <=> $b['surname'];
+        });
+        if ($accs == null) {
             echo '<h3>No accounts created!</h3>';
         } ?>
         <?php if ($accs != null)  foreach ($accs as $acc) : ?>
             <li>
-                Account No. <?= $acc['accNo'] ?> Balance: <?= $acc['amount'] . ' EUR' ?> Account holder: <?= $acc['name'] . ' ' . $acc['surname'] . ' ID: ' . $acc['pId']?>
-                
-                    <a href="?action=add&accNo=<?=$acc['accNo']?>" class="btnl">Deposit</a>
-                
-                    <a href="?action=rem&accNo=<?=$acc['accNo']?>" class="btnl">Withdraw</a>
-                
-                <form action="?action=delete&accNo=<?=$acc['accNo']?>" method="post">
+                Account No. <?= $acc['accNo'] ?> Balance: <?= $acc['amount'] . ' EUR' ?> Account holder: <?= $acc['name'] . ' ' . $acc['surname'] . ' ID: ' . $acc['pId'] ?>
+
+                <a href="?action=add&accNo=<?= $acc['accNo'] ?>" class="btnl">Deposit</a>
+
+                <a href="?action=rem&accNo=<?= $acc['accNo'] ?>" class="btnl">Withdraw</a>
+
+                <form action="?action=delete&accNo=<?= $acc['accNo'] ?>" method="post">
                     <button type="submit">Delete account</button>
                 </form>
             </li>

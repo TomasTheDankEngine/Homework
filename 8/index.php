@@ -9,12 +9,19 @@ function redirectto(string $page)
 function redirecttoAction ($action, $id = 0) {
     if ($id) {
         // header('Location: http://localhost/1-php/Homework/8/?action='.$action.'&id='.$id);
-        header("Location: http://localhost/1-php/Homework/8/?action=$action&id=$id");
+        header("Location: http://localhost/1-php/Homework/8/?action=$action&accNo=$id");
     }
     else {
         header("Location: http://localhost/1-php/Homework/8/?action=$action");
     }
     die;
+}
+
+function validPId($pId) {
+    $pId = trim($pId);
+    if(!preg_match('/^[0-9]{11}$/', $pId)){
+        return false;
+    }
 }
 
 function newAccNo($accs)

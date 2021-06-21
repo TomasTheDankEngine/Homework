@@ -16,3 +16,5 @@ echo '<br>';
 
 echo $medis1->color;
 $medis1->rustleLeaves();
+$medis1->name = 'oak';
+$medis1->rustleLeaves();
