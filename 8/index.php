@@ -1,5 +1,10 @@
 <?php
-session_start();
+// session_start();
+
+if (!isset($_SESSION['approved'])) {
+    redirectto('login.php');
+}
+
 function redirectto(string $page)
 {
     header("Location: http://localhost/1-php/Homework/8/$page");
