@@ -9,16 +9,13 @@ class Pinigine {
             return;
         }
         if ($kiekis <= 0) {
-            // echo '<br>Neteisingas kiekis.<br>';
             return;
         }
         else if ($kiekis > 0 && $kiekis <= 2) {
             $this->metaliniaiPinigai += $kiekis;
-            echo "<br>$kiekis prideta prie metaliniu pinigu.<br>";
         }
         else if ($kiekis > 2) {
             $this->popieriniaiPinigai += $kiekis;
-            echo "<br>$kiekis prideta prie popieriniu pinigu.<br>";
         }
     }
 
@@ -27,5 +24,6 @@ class Pinigine {
         echo '<br>Popieriniu pinigu yra ' . round($this->popieriniaiPinigai, 2) . '.<br>';
         echo '<br>Metaliniu pinigu yra ' . round($this->metaliniaiPinigai, 2) . '.<br>';
         echo "<br>Pinigu suma yra $sum.<br>";
+        // return round($this->popieriniaiPinigai, 2) . round($this->metaliniaiPinigai, 2) . $sum;
     }
 }

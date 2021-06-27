@@ -9,21 +9,29 @@ class Kibiras2
     public function prideti1Akmeni()
     {
         $this->akmenuKiekis++;
-        echo 'Pridetas vienas akmuo.';
+        self::$akmenuKiekisVisuoseKibiruose += $this->akmenuKiekis;
     }
 
     public function pridetiDaugAkmenu($kiekis)
     {
+        if (!is_integer($kiekis)) {
+            return;
+        }
         if ($kiekis >= 1) {
             $this->akmenuKiekis += $kiekis;
-            echo "Prideta $kiekis akmenu.";
+            self::$akmenuKiekisVisuoseKibiruose += $this->akmenuKiekis;
         } else {
-            echo 'Neteisingas kiekis.';
+            return;
         }
     }
 
     public function kiekPririnktaAkmenu()
     {
-        echo "Kibire akmenu: $this->akmenuKiekis";
+        return $this->akmenuKiekis;
+    }
+
+    public static function kiekPririnktaAkmenuVis()
+    {
+        return self::$akmenuKiekisVisuoseKibiruose;
     }
 }

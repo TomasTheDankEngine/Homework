@@ -1,6 +1,6 @@
 <?php
 
-class Kibiras1
+class Kibiras3
 {
 
     private $akmenuKiekis = 0;
@@ -17,8 +17,7 @@ class Kibiras1
         }
         if ($kiekis >= 1) {
             $this->akmenuKiekis += $kiekis;
-        }
-        else {
+        } else {
             return;
         }
     }
