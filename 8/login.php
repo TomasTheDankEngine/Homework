@@ -1,10 +1,13 @@
 <?php
-// require __DIR__ . '/msg.php';
+
+require __DIR__ . '/bootstrap.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (isset($_GET['logout'])) {
         unset($_SESSION['approved'], $_SESSION['username']);
-        redirectto('login.php');
+        // redirectto('login.php');
+        header('Location: http://localhost/1-php/Homework/8/login.php');
+        die;
     }
 }
 else {
@@ -14,10 +17,8 @@ else {
             if ($user['pass'] == md5($_POST['pass'])) {
                 $_SESSION['approved'] = true;
                 $_SESSION['username'] = $user['username'];
-                // setMsg('Login succesfful!');
-                // redirectto('index.php');
-                header("Location: http://localhost/1-php/Homework/8/?action=accounts");
-                die;
+                setMsg('Login succesfful!');
+                redirectto('index.php');
             }
         }
     }
@@ -36,9 +37,10 @@ else {
 </head>
 
 <body>
-
+<?php include __DIR__ . '/menu.php' ?>
+<?php include __DIR__ . '/msg.php' ?>
     <h1>Login</h1>
-    <form action="accounts" method="post">
+    <form action="accounts.php" method="post">
         <input type="text" name="username">
         <input type="text" name="pass">
         <button type="submit">Login</button>
