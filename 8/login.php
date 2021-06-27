@@ -1,4 +1,5 @@
 <?php
+// require __DIR__ . '/msg.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (isset($_GET['logout'])) {
@@ -14,7 +15,9 @@ else {
                 $_SESSION['approved'] = true;
                 $_SESSION['username'] = $user['username'];
                 // setMsg('Login succesfful!');
-                redirectto('index.php');
+                // redirectto('index.php');
+                header("Location: http://localhost/1-php/Homework/8/?action=accounts");
+                die;
             }
         }
     }
