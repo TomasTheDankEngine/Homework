@@ -10,6 +10,7 @@
 <body>
     <!-- nav start -->
     <nav class="menu-nav">
+    <?php include __DIR__ . '/bootstrap.php' ?>
         <?php include __DIR__ . '/menu.php' ?>
         <?php include __DIR__ . '/msg.php' ?>
     </nav>

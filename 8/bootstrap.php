@@ -2,6 +2,7 @@
 
 session_start();
 
+
 if (!file_exists(__DIR__ . '/accs.json')) {
     file_put_contents(__DIR__ . '/accs.json', json_encode([]));
 }

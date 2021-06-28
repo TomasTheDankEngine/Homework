@@ -17,8 +17,8 @@ else {
             if ($user['pass'] == md5($_POST['pass'])) {
                 $_SESSION['approved'] = true;
                 $_SESSION['username'] = $user['username'];
-                setMsg('Login succesfful!');
-                redirectto('index.php');
+                setMsg('Login successful!');
+                redirectto('accounts.php');
             }
         }
     }
