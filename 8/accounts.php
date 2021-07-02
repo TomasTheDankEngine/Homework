@@ -1,3 +1,11 @@
+<?php
+// require __DIR__ . '/bootstrap.php';
+if (!isset($_SESSION['approved'])) {
+    redirectto('');
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +20,6 @@
 <body>
     <!-- nav start -->
     <nav class="menu-nav">
-        <?php include __DIR__ . '/bootstrap.php' ?>
         <?php include __DIR__ . '/menu.php' ?>
         <?php include __DIR__ . '/msg.php' ?>
     </nav>

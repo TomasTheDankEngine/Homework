@@ -9,13 +9,13 @@ class Grybas
 
     public function __construct()
     {
-        if (rand(0, 10) < 5) {
+        if (rand(0, 1)) {
             $this->valgomas = true;
         } else {
             $this->valgomas = false;
         }
 
-        if (rand(0, 10) < 5) {
+        if (rand(0, 1)) {
             $this->sukirmijes = true;
         } else {
             $this->sukirmijes = false;
