@@ -1,0 +1,17 @@
+{
+    "name": "tomas/8-obj",
+    "description": "bank obj",
+    "authors": [
+        {
+            "name": "TomasTheDankEngine",
+            "email": "tomas.miri@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bank\\": "app",
+            "App\\DB\\": "app"
+        }
+    },
+    "require": {}
+}
