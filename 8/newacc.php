@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION['approved'])) {
+    redirectto('');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

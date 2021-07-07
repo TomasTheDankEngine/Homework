@@ -22,6 +22,14 @@
                 // header('Location: http://localhost/1-php/Homework/8/accounts.php');
                 // die;
             }
+            else {
+                setMsg('Incorrect password!');
+                redirectto('');
+            }
+        }
+        else {
+            setMsg('Incorrect username!');
+            redirectto('');
         }
     }
 // }

@@ -1,5 +1,4 @@
 <?php
-// require __DIR__ . '/bootstrap.php';
 if (!isset($_SESSION['approved'])) {
     redirectto('');
 }

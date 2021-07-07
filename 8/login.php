@@ -14,7 +14,7 @@
     <h1>Login</h1>
     <form action="?action=doLog" method="post">
         <input type="text" name="username">
-        <input type="text" name="pass">
+        <input type="password" name="pass">
         <button type="submit">Login</button>
     </form>
 </body>
