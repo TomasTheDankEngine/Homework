@@ -53,7 +53,7 @@ class BankController {
 
     public function create()
     {
-        return App::view('create_acc'); ///////////////
+        return App::view('createAcc'); ///////////////
     }
 
     public function save()

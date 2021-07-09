@@ -14,7 +14,7 @@ class App
     public static function view($file, $data = [])
     {
         extract($data);
-        require __DIR__ . 'views/' . $file . '.php';
+        require DIR.'views/'.$file.'.php';
     }
 
     public static function redirect($path = '')
@@ -38,6 +38,21 @@ class App
             }
             return $accno;
         }
+    }
+
+    public static function getMsg()
+    {
+        if (!isset($_SESSION['msg'])) {
+            return false;
+        }
+        $msg = $_SESSION['msg'];
+        unset($_SESSION['msg']);
+        return $msg;
+    }
+
+    public static function setMsg(string $msg)
+    {
+        $_SESSION['msg'] = $msg;
     }
 
     private static function router()
