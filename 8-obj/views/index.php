@@ -1,11 +1,10 @@
 <?php require DIR . 'views/top.php' ?>
-<div>
-    <a href="<?= URL ?>create-acc">Create new account</a>
-</div>
+
 <div>
     <ul>
     <?php
     require __DIR__ . '/msg.php';
+    require __DIR__ . '/menu.php';
         usort($accs, function ($a, $b) {
             return $a['surname'] <=> $b['surname'];
         });
@@ -13,7 +12,7 @@
             echo '<h3>No accounts created!</h3>';
         } if ($accs != null) foreach ($accs as $acc) : ?>
             <li>
-                Account No. <?= $acc['id'] ?> Balance: <?= $acc['amount'] ?>
+                ID: <?= $acc['id'] ?> Account No. <?= $acc['accNo'] ?> Name: <?= $acc['name'] ?> Surname: <?= $acc['surname'] ?> Personal ID: <?= $acc['pId'] ?> Balance: <?= $acc['amount'] ?>
                 [<a href="<?= URL ?>add/<?= $acc['id'] ?>">Deposit</a>]
                 [<a href="<?= URL ?>rem/<?= $acc['id'] ?>">Withdraw</a>]
                 <form action="<?= URL ?>delete/<?= $acc['id'] ?>" method="post">

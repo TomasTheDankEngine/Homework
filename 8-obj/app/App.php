@@ -23,8 +23,9 @@ class App
         die;
     }
 
-    function newAccNo($accs)
+    public static function newAccNo()
     {
+        $accs = Json::getJson()->showAll();
         if ($accs == null) {
             $accno = 'LT01';
             $accno .= rand(1000000000000000, 9999999999999999);
@@ -38,6 +39,17 @@ class App
             }
             return $accno;
         }
+    }
+
+    public static function genId($acc, $len = null)
+    {
+        $binhash = md5($acc, true);
+        $numhash = unpack('N2', $binhash);
+        $hash = $numhash[1] . $numhash[2];
+        if ($len && is_int($len)) {
+            $hash = substr($hash, 0, $len);
+        }
+        return $hash;
     }
 
     public static function getMsg()
