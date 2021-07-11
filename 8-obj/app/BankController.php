@@ -31,7 +31,7 @@ class BankController
             App::redirect("add/$id");
         } else {
             $acc['amount'] += $amount;
-            App::setMsg('Amount successfully deposited.');
+            App::setMsg("$amount EUR successfully deposited.");
             Json::getJson()->update($id, $acc);
             App::redirect();
         }
@@ -56,7 +56,7 @@ class BankController
             App::redirect("rem/$id");
         } else {
             $acc['amount'] -= $amount;
-            App::setMsg('Amount successfully withdrawn.');
+            App::setMsg("$amount EUR successfully withdrawn.");
             Json::getJson()->update($id, $acc);
             App::redirect();
         }
@@ -78,9 +78,26 @@ class BankController
     {
         $tmpAcc = App::newAccNo();
         $tmpId = App::genId($tmpAcc, 12);
-        $acc = ['id' => $tmpId, 'pId' => $_POST['pId'], 'accNo' => $tmpAcc, 'name' => $_POST['name'], 'surname' => $_POST['surname'], 'amount' => 0];
-        App::setMsg('Account created successfully.');
-        Json::getJson()->create($acc);
-        App::redirect();
+        if ($_POST['pId'] == null || $_POST['name'] == null || $_POST['surname'] == null) {
+            App::setMsg('Fields cannot be empty.');
+            App::redirect('create-acc');
+        }
+        if (!is_numeric($_POST['pId']) || strlen($_POST['pId']) != 11) {
+            App::setMsg('Personal ID must bet 11 digits.');
+            App::redirect('create-acc');
+        }
+        if (!is_string($_POST['name']) || strlen($_POST['name']) < 3) {
+            App::setMsg('Name must consist of no less than 3 letters.');
+            App::redirect('create-acc');
+        }
+        if (!is_string($_POST['surname']) || strlen($_POST['surname']) < 3) {
+            App::setMsg('Surname must consist of no less than 3 letters.');
+            App::redirect('create-acc');
+        } else {
+            $acc = ['id' => $tmpId, 'pId' => $_POST['pId'], 'accNo' => $tmpAcc, 'name' => $_POST['name'], 'surname' => $_POST['surname'], 'amount' => 0];
+            App::setMsg('Account created successfully.');
+            Json::getJson()->create($acc);
+            App::redirect();
+        }
     }
 }

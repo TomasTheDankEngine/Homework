@@ -1,5 +1,6 @@
 <?php require DIR.'views/top.php' ?>
 <?php require __DIR__ . '/menu.php'; ?>
+<?php require __DIR__ . '/msg.php'; ?>
 
 <div>
     <h2>Create new account</h2>

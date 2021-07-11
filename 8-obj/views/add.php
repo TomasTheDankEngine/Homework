@@ -12,7 +12,7 @@
     <div>Balance: <?= $acc['amount'] ?></div>
 </div>
 
-<form action="<?= URL ?>add/<?= $id ?>" method="post">
+<form action="<?= URL ?>add/<?=$id?>" method="post">
     <input type="text" name="amount">
     <button type="submit">Deposit amount</button>
 </form>
