@@ -38,7 +38,7 @@ class Json implements DataBase {
     {
         foreach ($this->data as $index => $acc) {
             if ($acc['id'] == $userId) {
-                $this->data[$index] == $userData;
+                $this->data[$index] = $userData;
                 return;
             }
         }
